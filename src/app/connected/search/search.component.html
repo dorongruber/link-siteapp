@@ -1,0 +1,23 @@
+<div class="search-table">
+  <header>
+    CATEGORYS
+   <ul class="categorys-list">
+    <ng-container *ngFor="let category of categorys">
+      <li class="category" (click)="SelectedCategory(category.title)">
+        {{category.title}}
+      </li>
+    </ng-container>
+   </ul>
+  </header>
+  <ul class="cat-sites">
+    <ng-container *ngFor="let site of sitesfromcategory">
+      <li class="site"   >
+        <span>
+          <mat-icon (click)="AddSite(site)">add_box</mat-icon>
+        </span>
+        {{site.url}}
+
+      </li>
+    </ng-container>
+  </ul>
+</div>

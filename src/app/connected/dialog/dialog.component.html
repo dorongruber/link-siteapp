@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>category: {{data.title}}
+  <button mat-button (click)="onNoClick()"><span class="close">&times;</span></button>
+</h1>
+<div mat-dialog-content >
+  <iframe class="dialog-content" [src]="data.url | safe" ></iframe>
+</div>
+

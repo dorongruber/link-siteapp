@@ -1,0 +1,31 @@
+<div id="homepage" class="page-body" >
+  <!---->
+  <img src="../../../assets//images/516371-PIS02L-806.jpg" alt="background image">
+  <h2>{{user}}</h2>
+  <div class="menu-bar">
+
+    <!--
+      <div (click)="ShowSerach()"  class="icon">search by category</div>
+    <div (click)="ShowPrivate()" class="icon">user categorys</div>
+    -->
+    <div class="icon"><a [routerLink]="['/mainpage/search', uId]">
+      <mat-icon>search</mat-icon>
+    </a></div>
+    <div class="icon">
+      <a [routerLink]="['/mainpage/private', uId]">
+        <mat-icon>home</mat-icon>
+      </a>
+    </div>
+    <div class="icon">
+      <a [routerLink]="['/connect/login']" >
+        <mat-icon>exit_to_app</mat-icon>
+      </a>
+    </div>
+  </div>
+
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
+
+</div>
+

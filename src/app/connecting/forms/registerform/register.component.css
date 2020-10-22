@@ -1,0 +1,15 @@
+.register-form {
+  margin-top: 7vh;
+}
+
+p {
+  display: none;
+}
+
+.icon {
+  font-size: 2em;
+  width: 1em;
+  height: 1em;
+  border: 1px solid black;
+  cursor: pointer;
+}
