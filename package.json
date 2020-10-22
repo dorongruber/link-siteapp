@@ -1,9 +1,10 @@
 {
   "name": "link-building",
   "version": "0.0.0",
+  "main": "app.js",
   "scripts": {
     "ng": "ng",
-    "start": "node app.js",
+    "start": "node app",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
