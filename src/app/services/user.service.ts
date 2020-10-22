@@ -30,14 +30,6 @@ export class UserService {
       console.log('AddSiteToUser res => ', res);
     });
   }
-  /*
-  GetUserTable(uId: string) {
-    return this.http.get <
-    {categorys: [{_id: string, catid: string, sites: [{sid: string, url: string}]} ]}
-    > ('http://localhost:3000/api/user/usertable/' + uId);
-
-  }
-  */
 
  GetUserTable(uId: string) {
   return this.http.get <
@@ -64,13 +56,3 @@ export class UserService {
  }
 
 }
-
-/*
-.subscribe(res => {
-      if (res.message) {
-        console.log('user added');
-      } else {
-        console.error('registration information all ready in database');
-      }
-    });
-*/
