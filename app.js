@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path= require('path');
 const cors = require('cors');
 
 
-const userRouter = require('./routers/users');
-const siteRouter = require('./routers/sites');
+const userRouter = require('./back/routers/users');
+const siteRouter = require('./back/routers/sites');
 mongoose.connect(
   process.env.BD_CONNECTION, { useNewUrlParser: true , useUnifiedTopology: true  })
   .then(() => {
@@ -34,6 +35,9 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('*', (req,res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'))
+})
 
 const port  = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening on port ${port}`))
