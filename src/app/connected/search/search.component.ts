@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { StreamService } from 'src/app/services/stream.service';
 import { UserService } from 'src/app/services/user.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-search' ,
@@ -12,6 +14,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 
 export class SearchComponent implements OnInit {
+  title: string;
   selcat: string;
   sites: string[] = [];
   sitesfromcategory: any[] = [];
@@ -22,7 +25,8 @@ export class SearchComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private categoryservice: StreamService,
-    private userservice: UserService
+    private userservice: UserService,
+    public dialog: MatDialog
     ) { }
 
   ngOnInit() {
@@ -67,6 +71,20 @@ export class SearchComponent implements OnInit {
         title: category.catName,
         amount: category.amount
       });
+    });
+  }
+
+  openDialog(url: string): void {
+    console.log('cat, url => ', this.selcat, url);
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '100vw',
+      height: '90vh',
+      data: {title: this.selcat, url}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.title = result;
     });
   }
 

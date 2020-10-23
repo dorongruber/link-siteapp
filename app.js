@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 });
 
 app.get('*', (req,res) => {
-  res.sendFile(path.join(__dirname, 'link-building/index.html'))
+  res.sendFile(path.join(__dirname, 'dist/link-building/index.html'))
 })
 
 const port  = process.env.PORT || 3000;

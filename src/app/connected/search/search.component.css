@@ -2,8 +2,7 @@
 .search-table {
   display: grid;
   grid-template-columns: auto 1fr;
-  height: 82vh;
-  margin: 1vh 1vw;
+  height: 80vh;
   padding: 0;
   overflow-y: scroll;
   width: auto;
@@ -15,7 +14,7 @@
   grid-column: 2;
   flex-wrap: wrap;
   margin: 0;
-  padding-left: 0;
+  padding-left: 3vw;
 
 }
 
@@ -30,7 +29,7 @@
 }
 
 .site {
-  width: 12vw;
+  width: 10vw;
   margin: .5vh .5vw;
   text-align: center;
   padding: .5em 1em;
@@ -78,8 +77,18 @@ button {
  border-bottom: 1px solid antiquewhite ;
 }
 
-span {
+span mat-icon {
   float: left;
+  font-size: 2.1em;
+}
+
+.icon {
+  margin: 2vh .5em;
+  cursor: pointer;
+  width: 1.2em;
+}
+.url {
+  font-size: 1.4em;
 }
 
 @-webkit-keyframes row-animation {

@@ -13,3 +13,9 @@ p {
   border: 1px solid black;
   cursor: pointer;
 }
+
+::ng-deep  .mat-snack-bar-handset {
+  position: relative;
+  right: 18vw ;
+  top: 5vh ;
+}

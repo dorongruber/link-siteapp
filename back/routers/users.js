@@ -9,16 +9,18 @@ router.post('/login', (req,res) => {
   console.log('login user -> ', req.body);
   User.findOne({email: req.body.email})
   .then(user => {
-    if (user.$isEmpty('name')) {
-      console.log('empty name prop');
+    if (user === null) {
+      res.json({userid: 'error'});
+    } else {
+      bcrypt.compare(req.body.password, user.password).then(response => {
+        if (response) {
+          res.json({userid: user._id})
+        } else {
+          res.json({userid: 'error'});
+        }
+      })
     }
-    bcrypt.compare(req.body.password, user.password).then(response => {
-      if (response) {
-        res.json({userid: user._id})
-      } else {
-        res.json({userid: 'empty'});
-      }
-    })
+
     // console.log('back user -> ', user);
   })
 

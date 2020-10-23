@@ -11,7 +11,8 @@ const routes: Routes = [
     {path: 'registration', component: RegisterComponent},
     {path: 'login', component: LogformComponent}
   ]
-}
+},
+  {path: 'connect/login', redirectTo: ''}
 ];
 
 @NgModule({

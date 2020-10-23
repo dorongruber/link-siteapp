@@ -24,7 +24,7 @@
   animation-duration: 1s;
 }
 h2 {
-  margin: 5vh 3vw;
+  margin: 4vh 4vw;
   grid-column: 1;
   border-bottom: 3px solid black;
 }
@@ -46,16 +46,13 @@ h2 {
   cursor: pointer;
   width: 3em;
   opacity: .6;
-  border-bottom: 1px solid none;
 }
 
 a mat-icon {
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .icon:hover {
-  border-bottom: 1px solid black;
-  border-radius: 15px;
   opacity: 1;
 }
 
