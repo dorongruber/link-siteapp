@@ -59,7 +59,7 @@ header {
 button {
   position: relative;
   top: .43em;
-  height: 4.vh;
+  height: 4vh;
 }
 
 .search-table::-webkit-scrollbar {
