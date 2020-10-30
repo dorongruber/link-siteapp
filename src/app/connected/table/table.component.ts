@@ -30,6 +30,16 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.userTable = [];
+    console.log('private id -> ');
+    this.SetUsertable(this.GetUrlParams());
+
+  }
+  showname(category: string, link: string) {
+
+    // console.log('clicked on category,link :', category, link);
+  }
+
+  GetUrlParams() {
     this.user$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
         return params.getAll('id');
@@ -40,15 +50,8 @@ export class TableComponent implements OnInit {
         console.log('res => ', res);
         tempid = res;
       });
-    console.log('private id -> ', tempid);
-    this.SetUsertable(tempid);
-
+    return tempid;
   }
-  showname(category: string, link: string) {
-
-    // console.log('clicked on category,link :', category, link);
-  }
-
 
    SetUsertable(id: string) {
    const templist = this.userservice.GetUserTable(id);
@@ -90,6 +93,31 @@ export class TableComponent implements OnInit {
       console.log('The dialog was closed');
       this.title = result;
     });
+  }
+
+  DeleteLink(cid: string, sid: string) {
+    const uid = this.GetUrlParams();
+    console.log('DeleteLink tablecomponent');
+    this.userservice.DeleteLink(cid, sid, uid).subscribe(res => {
+      console.log('res ====> ', res);
+      if (res) {
+        this.userTable.forEach(category => {
+          if (category.catId === cid) {
+            category.sites = category.sites.filter(s => s.sid !== sid);
+            return;
+          }
+        });
+      }
+    });
+  }
+
+  DeleteEmptyCategory(cid: string) {
+    const uid = this.GetUrlParams();
+    this.userservice.RemoveCategory(uid, cid).subscribe(res => {
+      console.log('removed category : ', res);
+      this.userTable = this.userTable.filter(category => category.catId !== cid);
+    });
+
   }
 
 }

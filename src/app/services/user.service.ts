@@ -55,4 +55,13 @@ export class UserService {
   return this.http.get<{name: string}>('api/user/currentuser/' + uid);
  }
 
+ DeleteLink(cid: string, sid: string, uid: string) {
+   console.log('DeleteLink userservice');
+   return this.http.delete(`api/user/link/${cid}/${sid}/${uid}`);
+ }
+
+ RemoveCategory(uid: string, cid: string) {
+   return this.http.delete(`api/user/category/${uid}/${cid}`);
+ }
+
 }

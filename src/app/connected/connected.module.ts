@@ -10,6 +10,7 @@ import { MatFormFieldModule, MatIconModule } from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { SafePipe } from './pipe/safepipe';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { SafePipe } from './pipe/safepipe';
     MatIconModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatButtonModule,
     ConnectedRoutingModule
   ],
-  entryComponents:[DialogComponent]
+  entryComponents: [DialogComponent]
 })
 export class ConnectedModule {}

@@ -1,4 +1,3 @@
-
 .search-table {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -15,7 +14,6 @@
   flex-wrap: wrap;
   margin: 0;
   padding-left: 3vw;
-
 }
 
 .cat-sites, .categorys-list {
@@ -35,12 +33,12 @@
   padding: .5em 1em;
   background-color: rgba(175, 175, 175,.8);
   overflow: hidden;
+  border-radius: 20px;
   color: rgb(14, 16, 17);
   -webkit-animation-name: row-animation;
   -webkit-animation-duration: 1s ;
   animation-name: row-animation;
   animation-duration: 1s;
-
 }
 
 .site:hover {
@@ -69,7 +67,7 @@ button {
 .category {
   margin: .4em 0;
   cursor: pointer;
-  color: antiquewhite;
+  color: black;
 }
 
 .category:hover {
@@ -79,13 +77,12 @@ button {
 
 span mat-icon {
   float: left;
-  font-size: 2.1em;
+  font-size: 2.5em;
 }
 
 .icon {
   margin: 2vh .5em;
   cursor: pointer;
-  width: 1.2em;
 }
 .url {
   font-size: 1.4em;
