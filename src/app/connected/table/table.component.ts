@@ -30,15 +30,10 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.userTable = [];
-    console.log('private id -> ');
+    // console.log('private id -> ');
     this.SetUsertable(this.GetUrlParams());
 
   }
-  showname(category: string, link: string) {
-
-    // console.log('clicked on category,link :', category, link);
-  }
-
   GetUrlParams() {
     this.user$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
@@ -74,7 +69,7 @@ export class TableComponent implements OnInit {
        });
      });
    });
-   console.log('yser table -> ', this.userTable);
+   // console.log('yser table -> ', this.userTable);
   }
 
   GetUsertable() {
@@ -82,7 +77,7 @@ export class TableComponent implements OnInit {
   }
 
   openDialog(cat: string, url: string): void {
-    console.log('cat, url => ', cat, url);
+    // console.log('cat, url => ', cat, url);
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '100vw',
       height: '90vh',
@@ -90,14 +85,14 @@ export class TableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      // console.log('The dialog was closed');
       this.title = result;
     });
   }
 
   DeleteLink(cid: string, sid: string) {
     const uid = this.GetUrlParams();
-    console.log('DeleteLink tablecomponent');
+    // console.log('DeleteLink tablecomponent');
     this.userservice.DeleteLink(cid, sid, uid).subscribe(res => {
       console.log('res ====> ', res);
       if (res) {
@@ -114,7 +109,7 @@ export class TableComponent implements OnInit {
   DeleteEmptyCategory(cid: string) {
     const uid = this.GetUrlParams();
     this.userservice.RemoveCategory(uid, cid).subscribe(res => {
-      console.log('removed category : ', res);
+      // console.log('removed category : ', res);
       this.userTable = this.userTable.filter(category => category.catId !== cid);
     });
 

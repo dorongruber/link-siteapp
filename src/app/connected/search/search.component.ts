@@ -75,7 +75,7 @@ export class SearchComponent implements OnInit {
   }
 
   openDialog(url: string): void {
-    console.log('cat, url => ', this.selcat, url);
+    // console.log('cat, url => ', this.selcat, url);
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '100vw',
       height: '90vh',
