@@ -13,9 +13,8 @@
 
 .menu-bar {
   display: flex;
-  justify-content: flex-end;
   grid-column: 2 / 4;
-  background: wheat;
+  background: linear-gradient(270deg, wheat, transparent);
   border-radius: 20px;
   padding: 1em;
   margin: .6em 1em;
@@ -32,14 +31,26 @@ h2 {
 .main-content {
   grid-row: 2;
   grid-column: 1 / 4;
-  background: wheat;
+  background: linear-gradient(90deg, wheat, transparent);
   border-radius: 20px;
-  margin: 1vh 1vw;
+  margin: .5em 0;
 }
 
 .icon {
   cursor: pointer;
-  width: 4vw;
+  width: 3em;
+}
+
+.search-page {
+  margin-left: auto;
+}
+
+.home-page {
+  margin-left: 2em;
+}
+
+.logout {
+  margin-left: 2em;
 }
 
 a mat-icon {

@@ -1,6 +1,11 @@
 .login-form {
-  margin-top: 22vh;
+  margin-top: 13vh;
 
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
 }
 
 .mat-form, input  {

@@ -32,5 +32,15 @@
           </ul>
         </div>
        </ng-container>
+       <ng-container *ngIf="category.catId === 'temp'">
+        <div class="add-content-message-container">
+          <div class="add-content-message">
+            <h2 class="message-container" [routerLink]="['/mainpage/search', uId]">
+              <mat-icon class="add-icon">add</mat-icon>
+              <span class="message-content">start adding content</span>
+            </h2>
+          </div>
+        </div>
+       </ng-container>
      </ng-container>
  </div>

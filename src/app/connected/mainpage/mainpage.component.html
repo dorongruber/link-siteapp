@@ -8,15 +8,15 @@
       <div (click)="ShowSerach()"  class="icon">search by category</div>
     <div (click)="ShowPrivate()" class="icon">user categorys</div>
     -->
-    <div class="icon"><a [routerLink]="['/mainpage/search', uId]">
+    <div class="icon search-page"><a [routerLink]="['/mainpage/search', uId]">
       <mat-icon>search</mat-icon>
     </a></div>
-    <div class="icon">
+    <div class="icon home-page">
       <a [routerLink]="['/mainpage/private', uId]">
         <mat-icon>home</mat-icon>
       </a>
     </div>
-    <div class="icon">
+    <div class="icon logout">
       <a [routerLink]="['/connect/login']" >
         <mat-icon>exit_to_app</mat-icon>
       </a>

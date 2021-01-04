@@ -20,6 +20,7 @@ export class TableComponent implements OnInit {
   user$: Observable<string>;
   currentUser: {name: string, id: string};
   userTable: UserTable[];
+  uId: string;
 
   constructor(
     private router: Router,
@@ -44,6 +45,7 @@ export class TableComponent implements OnInit {
     this.user$.subscribe(res => {
         console.log('res => ', res);
         tempid = res;
+        this.uId = tempid;
       });
     return tempid;
   }
@@ -80,7 +82,7 @@ export class TableComponent implements OnInit {
     // console.log('cat, url => ', cat, url);
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '100vw',
-      height: '90vh',
+      height: '100vh',
       data: {title: cat, url}
     });
 

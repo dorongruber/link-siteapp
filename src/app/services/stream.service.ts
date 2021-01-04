@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+const URL = 'api/sites/';
+
 @Injectable({providedIn: 'root'})
 export class StreamService {
   categorysList: any[] = [];
   constructor(private http: HttpClient) {}
 
   SetCategorysList() {
-    this.http.get<{dictonary: any}>('api/sites/allcategorys')
+    this.http.get<{dictonary: any}>(`${URL}allcategorys`)
     .pipe(map(data => {
       return data.dictonary.map(cat => {
         return {
@@ -32,7 +34,7 @@ export class StreamService {
   }
 
   GetCategorySites(category: string) {
-    return this.http.get<{content: any}>('api/sites/samecategory/' + category)
+    return this.http.get<{content: any}>(`${URL}samecategory/` + category)
     .pipe(map(data => {
       return data.content.map(site => {
         return {
