@@ -7,5 +7,6 @@
 
 
 .btn {
-  margin: .5em 15vw;
+  display: flex;
+  margin: auto;
 }

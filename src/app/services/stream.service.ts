@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-const URL = 'api/sites/';
+// const URL = 'api/sites/';
+
+const URL = 'http://10.100.102.4:3000/api/sites/';
 
 @Injectable({providedIn: 'root'})
 export class StreamService {
