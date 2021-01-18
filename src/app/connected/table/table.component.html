@@ -1,11 +1,11 @@
 <div class="table-container">
-  <ng-container *ngIf="currentUser !== undefined ">
+
    <header>
-    <h3>
-     WELCOME: {{currentUser.name}}
-    </h3>
+    <h2>
+     YOUR SAVED SITES
+    </h2>
     </header>
-  </ng-container>
+
      <ng-container *ngFor="let category of GetUsertable()">
        <ng-container *ngIf="category.catId !== 'temp'">
         <div class="container">
@@ -30,9 +30,10 @@
                </li>
               </ng-container>
           </ul>
+          <hr class="line">
         </div>
        </ng-container>
-       <ng-container *ngIf="category.catId === 'temp'">
+       <ng-container *ngIf="category.catId === 'temp' || category === undefined">
         <div class="add-content-message-container">
           <div class="add-content-message">
             <h2 class="message-container" [routerLink]="['/mainpage/search', uId]">

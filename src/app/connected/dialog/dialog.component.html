@@ -3,6 +3,7 @@
   <h1 mat-dialog-title> site: {{data.url}}</h1>
   <button class="close" mat-button (click)="onNoClick()"><span >&times;</span></button>
 </div>
+<hr>
 <div mat-dialog-content >
   <iframe class="dialog-content" [src]="data.url | safe" ></iframe>
 </div>

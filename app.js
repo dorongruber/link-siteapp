@@ -8,7 +8,7 @@ const cors = require('cors');
 const userRouter = require('./back/routers/users');
 const siteRouter = require('./back/routers/sites');
 mongoose.connect(
-  process.env.BD_CONNECTION ,
+  process.env.BD_CONNECTION || 'mongodb+srv://dorongruber:QAWSed123321@cluster0.cos3s.mongodb.net/sites' ,
    { useNewUrlParser: true , useUnifiedTopology: true ,  useFindAndModify: false , returnOriginal: false})
   .then(() => {
     console.log('connected to database');
