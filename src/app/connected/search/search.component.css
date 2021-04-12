@@ -1,9 +1,7 @@
-
 .search-table {
   display: grid;
   grid-template-columns: auto 1fr;
-  height: 82vh;
-  margin: 1vh 1vw;
+  height: 80vh;
   padding: 0;
   overflow-y: scroll;
   width: auto;
@@ -15,8 +13,7 @@
   grid-column: 2;
   flex-wrap: wrap;
   margin: 0;
-  padding-left: 0;
-
+  padding-left: 3vw;
 }
 
 .cat-sites, .categorys-list {
@@ -30,18 +27,18 @@
 }
 
 .site {
-  width: 12vw;
+  width: 10vw;
   margin: .5vh .5vw;
   text-align: center;
   padding: .5em 1em;
   background-color: rgba(175, 175, 175,.8);
   overflow: hidden;
+  border-radius: 20px;
   color: rgb(14, 16, 17);
   -webkit-animation-name: row-animation;
   -webkit-animation-duration: 1s ;
   animation-name: row-animation;
   animation-duration: 1s;
-
 }
 
 .site:hover {
@@ -60,7 +57,7 @@ header {
 button {
   position: relative;
   top: .43em;
-  height: 4.vh;
+  height: 4vh;
 }
 
 .search-table::-webkit-scrollbar {
@@ -70,7 +67,7 @@ button {
 .category {
   margin: .4em 0;
   cursor: pointer;
-  color: antiquewhite;
+  color: black;
 }
 
 .category:hover {
@@ -78,8 +75,17 @@ button {
  border-bottom: 1px solid antiquewhite ;
 }
 
-span {
+span mat-icon {
   float: left;
+  font-size: 2.5em;
+}
+
+.icon {
+  margin: 2vh .5em;
+  cursor: pointer;
+}
+.url {
+  font-size: 1.4em;
 }
 
 @-webkit-keyframes row-animation {

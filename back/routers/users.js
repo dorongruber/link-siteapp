@@ -5,23 +5,23 @@ const router = express.Router();
 const User = require('../models/Users');
 const Table = require('../models/Tables');
 
+
 router.post('/login', (req,res) => {
-  console.log('login user -> ', req.body);
+  // console.log('login user -> ', req.body);
   User.findOne({email: req.body.email})
   .then(user => {
-    if (user.$isEmpty('name')) {
-      console.log('empty name prop');
+    if (user === null) {
+      res.json({userid: 'error'});
+    } else {
+      bcrypt.compare(req.body.password, user.password).then(response => {
+        if (response) {
+          res.json({userid: user._id})
+        } else {
+          res.json({userid: 'error'});
+        }
+      });
     }
-    bcrypt.compare(req.body.password, user.password).then(response => {
-      if (response) {
-        res.json({userid: user._id})
-      } else {
-        res.json({userid: 'empty'});
-      }
-    })
-    // console.log('back user -> ', user);
-  })
-
+  });
 })
 
 router.post('/registration', async (req,res) => {
@@ -112,7 +112,6 @@ router.post('/addcontent', async (req,res) => {
 
 router.get('/usertable/:uid', async (req,res) => {
   try {
-
     const userTable = await Table.findOne({userId: req.params.uid});
     // console.log('userTable -> ', userTable);
     res.status(200).json({categorys: userTable.categorys});
@@ -123,7 +122,7 @@ router.get('/usertable/:uid', async (req,res) => {
 
 router.get('/currentuser/:uid', async (req,res) => {
   const uid = req.params.uid;
-  console.log('uid => ', uid);
+  // console.log('uid => ', uid);
   const user = await User.findOne({_id: uid})
   const temp = ({
     name: user.name
@@ -131,5 +130,35 @@ router.get('/currentuser/:uid', async (req,res) => {
   res.json(temp);
 })
 
+router.delete('/link/:cid/:sid/:uid', async (req,res) => {
+  const {cid, sid, uid} = req.params;
+  try {
+    Table.findOneAndUpdate(
+      {"userId": uid, "categorys.catid": cid},
+      {$pull: {"categorys.$.sites": {siteid: sid}}},
+       (error, response) => {
+        if (error) { res.status(400).json({url: 'user.delete.link' , message: error})}
+        // console.log('response -> ', response);
+        res.status(201).json({message: 'succesfully deleted site', result: true});
+      });
+    console.log('DeleteLink user router');
+    // console.log('req.params -> ', cid, sid, uid);
+  }catch(err) {
+    res.status(400).json({message: err, src: 'user.js/link'});
+  }
+
+})
+
+router.delete('/category/:uid/:cid', (req,res) => {
+  const {uid, cid} = req.params;
+  console.log('delete(/category/:uid/:cid');
+  Table.findOneAndUpdate(
+    {"userId": uid},
+    {$pull: {"categorys": {catid: cid, sites: {$size: 0}}}}
+    , (error, response) => {
+    if (error) { res.status(400).json({url: 'user.delete.category' , message: error})}
+    res.status(201).json({message: 'succesfully deleted category', result: true});
+  });
+})
 
 module.exports = router;

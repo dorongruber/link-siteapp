@@ -1,35 +1,43 @@
 .table-container {
   overflow-y: scroll;
-  height: 83.5vh;
+  height: 82vh;
   border-radius: 20px;
 }
 
 .container {
-  margin: 1em;
+  margin: 9vh 1em;
+  border-bottom: 2px solid crimson;
 }
 
 .category-container {
   display: flex;
   list-style-type: none;
-  margin: 3vh 1vw;
+  margin: 1vh 1vw;
   padding: 1em;
 }
 
+.title-container {
+  display: flex;
+
+}
 .title {
-  color: antiquewhite;
-  margin: .3em .1em;
+  color: black;
+  margin: .1em 2.1em;
   font-size: 30px;
+  font-family: fantasy;
 }
 
 .link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   margin: 0 -1vw;
-  border: 1px solid rgb(5, 106, 118);
-  height: 10vh;
-  width: 8vw;
-  background-image: url('../../../assets//images/4265240.jpg');
+  border: 1px solid white;
+  height: 16vh;
+  width: 10vw;
+  background: crimson;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 0 .5em 1em 1em black;
   border-radius: 10px;
   padding-left: 1em;
   padding-right: 1em;
@@ -42,9 +50,12 @@
   margin-left: 2em;
   margin-right: 2em;
   cursor: pointer;
-  box-shadow: inset 0 0 1em #000000;
 }
 
+.icons-position {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .table-container::-webkit-scrollbar {
   display: none;
@@ -60,4 +71,16 @@ header {
   text-align: center;
 }
 
+.icon {
+  transform: scale(1.53);
+  margin: 0 2vw;
+}
 
+.icons-position .icon {
+  color: white
+}
+
+.url-container .url {
+  color: white;
+  font-size: 1.2em;
+}

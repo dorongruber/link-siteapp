@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
+import {
+  MatSnackBar
+} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-logform',
@@ -19,7 +22,8 @@ export class LogformComponent {
 
   constructor(
     private userservice: UserService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   Login(userlog: FormGroup) {
@@ -31,8 +35,18 @@ export class LogformComponent {
 
     // console.log('user -> ', user);
     this.userservice.LoginUser(user).subscribe(res => {
-      console.log('res Login -> ', res.userid);
-      this.router.navigate(['../mainpage', {id: res.userid}]);
+      if (res.userid === 'error') {
+        this.snackBar.open('invalide username/password pair ', 'close', {
+          duration: 2500,
+          panelClass: 'mat-snack-bar-handset',
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+        });
+      } else {
+        this.router.navigate(['../mainpage', {id: res.userid}]);
+      }
+
+
     });
   }
 }
