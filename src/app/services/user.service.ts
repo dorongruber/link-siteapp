@@ -30,14 +30,6 @@ export class UserService {
       console.log('AddSiteToUser res => ', res);
     });
   }
-  /*
-  GetUserTable(uId: string) {
-    return this.http.get <
-    {categorys: [{_id: string, catid: string, sites: [{sid: string, url: string}]} ]}
-    > ('http://localhost:3000/api/user/usertable/' + uId);
-
-  }
-  */
 
  GetUserTable(uId: string) {
   return this.http.get <
@@ -63,14 +55,13 @@ export class UserService {
   return this.http.get<{name: string}>('api/user/currentuser/' + uid);
  }
 
-}
+ DeleteLink(cid: string, sid: string, uid: string) {
+   console.log('DeleteLink userservice');
+   return this.http.delete(`api/user/link/${cid}/${sid}/${uid}`);
+ }
 
-/*
-.subscribe(res => {
-      if (res.message) {
-        console.log('user added');
-      } else {
-        console.error('registration information all ready in database');
-      }
-    });
-*/
+ RemoveCategory(uid: string, cid: string) {
+   return this.http.delete(`api/user/category/${uid}/${cid}`);
+ }
+
+}

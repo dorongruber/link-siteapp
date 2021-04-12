@@ -23,7 +23,7 @@ export class MainpageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log('mainpage');
+    // console.log('mainpage');
     this.userId$ = this.route.paramMap.pipe(
       switchMap(params => {
         return params.getAll('id');

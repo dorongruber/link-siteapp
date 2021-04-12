@@ -30,6 +30,11 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.userTable = [];
+    // console.log('private id -> ');
+    this.SetUsertable(this.GetUrlParams());
+
+  }
+  GetUrlParams() {
     this.user$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
         return params.getAll('id');
@@ -40,15 +45,8 @@ export class TableComponent implements OnInit {
         console.log('res => ', res);
         tempid = res;
       });
-    console.log('private id -> ', tempid);
-    this.SetUsertable(tempid);
-
+    return tempid;
   }
-  showname(category: string, link: string) {
-
-    // console.log('clicked on category,link :', category, link);
-  }
-
 
    SetUsertable(id: string) {
    const templist = this.userservice.GetUserTable(id);
@@ -71,7 +69,7 @@ export class TableComponent implements OnInit {
        });
      });
    });
-   console.log('yser table -> ', this.userTable);
+   // console.log('yser table -> ', this.userTable);
   }
 
   GetUsertable() {
@@ -79,7 +77,7 @@ export class TableComponent implements OnInit {
   }
 
   openDialog(cat: string, url: string): void {
-    console.log('cat, url => ', cat, url);
+    // console.log('cat, url => ', cat, url);
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '100vw',
       height: '90vh',
@@ -87,9 +85,34 @@ export class TableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      // console.log('The dialog was closed');
       this.title = result;
     });
+  }
+
+  DeleteLink(cid: string, sid: string) {
+    const uid = this.GetUrlParams();
+    // console.log('DeleteLink tablecomponent');
+    this.userservice.DeleteLink(cid, sid, uid).subscribe(res => {
+      console.log('res ====> ', res);
+      if (res) {
+        this.userTable.forEach(category => {
+          if (category.catId === cid) {
+            category.sites = category.sites.filter(s => s.sid !== sid);
+            return;
+          }
+        });
+      }
+    });
+  }
+
+  DeleteEmptyCategory(cid: string) {
+    const uid = this.GetUrlParams();
+    this.userservice.RemoveCategory(uid, cid).subscribe(res => {
+      // console.log('removed category : ', res);
+      this.userTable = this.userTable.filter(category => category.catId !== cid);
+    });
+
   }
 
 }

@@ -6,3 +6,9 @@
 .mat-form, input  {
   cursor: pointer;
 }
+
+::ng-deep .mat-snack-bar-handset {
+  position: relative;
+  right: 18vw ;
+  top: 18vh ;
+}

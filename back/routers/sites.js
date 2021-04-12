@@ -36,32 +36,7 @@ router.get('/samecategory/:category', async (req,res) => {
     res.json({message: err});
   }
 })
-/*
-router.get('/allcategorys', async (req,res) => {
-  var dictonary = {};
-  const sites = await Site.find();
-  console.log('allcategorys');
-  try {
-    sites.forEach((site) => {
-      if (dictonary[site.cat] === undefined) {
-        dictonary[site.cat] = 1;
-      } else {
-        dictonary[site.cat] = dictonary[site.cat] + 1;
-      }
-    })
-    let categorys = [];
-    for (var key in dictonary) {
-      categorys.push({
-        key: key,
-        value: dictonary[key]
-      });
-    }
-    res.json({categorys});
-  }catch(err) {
-    res.json(err);
-  }
-})
-*/
+
 router.get('/allcategorys', async (req,res) => {
   try{
     // console.log('allcategorys');

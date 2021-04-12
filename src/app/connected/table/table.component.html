@@ -7,15 +7,30 @@
     </header>
   </ng-container>
      <ng-container *ngFor="let category of GetUsertable()">
-       <div class="container">
-         <div class="title">{{category.catId}}</div>
-         <ul class="category-container">
-           <ng-container *ngFor="let link of category.sites" >
-             <li class="link" (click)="openDialog(category.catId, link.url)" >
-                 {{link.url}}
-              </li>
-             </ng-container>
-         </ul>
-       </div>
+       <ng-container *ngIf="category.catId !== 'temp'">
+        <div class="container">
+          <div class="title-container">
+            <ng-container *ngIf="category.sites.length === 0">
+              <button mat-mini-fab>
+                <mat-icon (click)="DeleteEmptyCategory(category.catId)">close</mat-icon>
+              </button>
+            </ng-container>
+            <span class="title" >{{category.catId}}</span>
+          </div>
+          <ul class="category-container">
+            <ng-container *ngFor="let link of category.sites" >
+              <li class="link"  >
+                  <div class="url-container">
+                    <span class="url">{{link.url}}</span>
+                  </div>
+                  <div class="icons-position">
+                    <span><mat-icon class='icon' (click)="openDialog(category.catId, link.url)">fullscreen</mat-icon></span>
+                    <span><mat-icon class='icon'(click)="DeleteLink(category.catId,link.sid)">delete_outline</mat-icon></span>
+                  </div>
+               </li>
+              </ng-container>
+          </ul>
+        </div>
+       </ng-container>
      </ng-container>
  </div>

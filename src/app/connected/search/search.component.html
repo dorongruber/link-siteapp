@@ -12,11 +12,12 @@
   <ul class="cat-sites">
     <ng-container *ngFor="let site of sitesfromcategory">
       <li class="site"   >
+        <div class="url">{{site.url}}</div>
         <span>
-          <mat-icon (click)="AddSite(site)">add_box</mat-icon>
+          <mat-icon class="icon" (click)="AddSite(site)">add_box</mat-icon>
         </span>
-        {{site.url}}
-
+       <span> <mat-icon class="icon" (click)="openDialog(site.url)">pageview</mat-icon>
+      </span>
       </li>
     </ng-container>
   </ul>

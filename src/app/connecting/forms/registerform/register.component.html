@@ -1,10 +1,5 @@
 <div  class="register-form">
 
-  <ng-container *ngIf="!state">
-    <h3 style="display: block;">
-      User specifications already registered in the system Try to connect
-    </h3>
-  </ng-container>
   <mat-icon class="icon" [routerLink]="['/connect/login']">undo</mat-icon>
   <form [formGroup]="register">
     <mat-form-field class="mat-form" appearance="fill">
@@ -19,7 +14,7 @@
 
     <mat-form-field class="mat-form"  appearance="fill">
       <mat-label>email address</mat-label>
-      <input matInput type="text" formControlName="email" placeholder="Email">
+      <input matInput name="email" type="text" formControlName="email" placeholder="Email">
     </mat-form-field><br>
 
     <mat-form-field class="mat-form" appearance="fill">
