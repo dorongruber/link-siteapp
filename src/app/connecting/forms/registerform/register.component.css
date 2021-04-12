@@ -1,5 +1,7 @@
-.register-form {
-  margin-top: 7vh;
+.register-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
 }
 
 p {
@@ -7,6 +9,8 @@ p {
 }
 
 .icon {
+  display: flex;
+  margin-left: auto;
   font-size: 2em;
   width: 1em;
   height: 1em;

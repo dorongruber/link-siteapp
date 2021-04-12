@@ -128,7 +128,7 @@ router.get('/usertable/:uid', async (req,res) => {
 
 router.get('/currentuser/:uid', async (req,res) => {
   const uid = req.params.uid;
-  // console.log('uid => ', uid);
+  console.log('uid => ', uid);
   const user = await User.findOne({_id: uid})
   const temp = ({
     name: user.name

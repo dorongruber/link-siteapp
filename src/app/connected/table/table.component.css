@@ -1,12 +1,12 @@
 .table-container {
   overflow-y: scroll;
-  height: 82vh;
+  height: 85vh;
   border-radius: 20px;
 }
 
 .container {
-  margin: 9vh 1em;
-  border-bottom: 2px solid crimson;
+  margin: 1.5em 1em;
+  /* border-bottom: 4px solid #3d3d3d; */
 }
 
 .category-container {
@@ -14,6 +14,7 @@
   list-style-type: none;
   margin: 1vh 1vw;
   padding: 1em;
+  overflow-x: scroll;
 }
 
 .title-container {
@@ -31,30 +32,33 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin: 0 -1vw;
-  border: 1px solid white;
-  height: 16vh;
-  width: 10vw;
-  background: crimson;
+  margin: 0 1vw;
+  /* border: 1px solid white; */
+  height: 7em;
+  width: 8em;
+
+
+  background-color: #3d3d3d;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%233d3d3d' stroke-width='0.42' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(49.7) translate(-979.88 -734.91)'%3E%3Cuse fill='%23414141' href='%23s' y='2'/%3E%3Cuse fill='%23414141' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23454545' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23454545' href='%23s'/%3E%3Cuse fill='%23494949' href='%23s' x='2'/%3E%3Cuse fill='%23494949' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(49.7) translate(-979.88 -734.91)'%3E%3Cg fill='%234d4d4d'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(49.7) translate(-979.88 -734.91)'%3E%3Cg fill='%234d4d4d'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(49.7) translate(-979.88 -734.91)'%3E%3Cg fill='%23505050'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(49.7) translate(-979.88 -734.91)'%3E%3Cg fill='%233d3d3d'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23545454'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(49.7) translate(-979.88 -734.91)'%3E%3Cg fill='%239c8c67'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(49.7) translate(-979.88 -734.91)'%3E%3Cg fill='%239c8c67'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(49.7) translate(-979.88 -734.91)'%3E%3Cg fill='%239c8c67'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
   background-size: cover;
-  background-repeat: no-repeat;
+
   border-radius: 10px;
   padding-left: 1em;
   padding-right: 1em;
   padding-top: .8em;
   padding-bottom: .4em;
-  overflow: hidden;
 }
 
 .link:hover{
-  margin-left: 2em;
-  margin-right: 2em;
   cursor: pointer;
+  background: transparent;
+  box-shadow: inset 1px 1px 3px;
 }
 
 .icons-position {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .table-container::-webkit-scrollbar {
@@ -73,14 +77,72 @@ header {
 
 .icon {
   transform: scale(1.53);
-  margin: 0 2vw;
+  margin: 0 1vw;
+}
+
+.icons-position .icon:hover {
+  color: black;
 }
 
 .icons-position .icon {
   color: white
 }
 
+.url-container {
+  overflow: hidden;
+}
+
 .url-container .url {
   color: white;
   font-size: 1.2em;
+
+}
+
+.add-content-message-container {
+  height: 84vh;
+  display: flex;
+  justify-content: center;
+}
+
+.add-content-message {
+  position: relative;
+  margin: auto;
+}
+
+.add-icon {
+  font-size: 2em;
+  width: 1em;
+  height: 1em;
+}
+
+.message-content {
+  position: relative;
+  bottom: 2vh;
+}
+
+.message-container {
+  cursor: pointer;
+}
+
+
+
+.category-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.category-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  /* background: wheat; */
+  border-radius: 10px;
+}
+
+.category-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  background: #3d3d3d;
+}
+
+
+.line {
+  box-shadow: 2px 7px 15px 4px;
 }

@@ -8,8 +8,13 @@ require('dotenv').config()
 const userRouter = require('./back/routers/users');
 const siteRouter = require('./back/routers/sites');
 mongoose.connect(
+<<<<<<< HEAD
   process.env.BD_CONNECTION,
    { useNewUrlParser: true , useUnifiedTopology: true ,  useFindAndModify: false})
+=======
+  process.env.BD_CONNECTION || 'mongodb+srv://dorongruber:QAWSed123321@cluster0.cos3s.mongodb.net/sites' ,
+   { useNewUrlParser: true , useUnifiedTopology: true ,  useFindAndModify: false , returnOriginal: false})
+>>>>>>> master
   .then(() => {
     console.log('connected to database');
   })
