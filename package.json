@@ -31,8 +31,12 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.2",
+<<<<<<< HEAD
+    "mongoose": "^5.12.3",
+=======
     "mongoose": "^5.10.9",
     "nodemon": "^2.0.6",
+>>>>>>> master
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

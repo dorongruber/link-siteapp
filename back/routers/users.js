@@ -7,21 +7,27 @@ const Table = require('../models/Tables');
 
 
 router.post('/login', (req,res) => {
-  // console.log('login user -> ', req.body);
-  User.findOne({email: req.body.email})
-  .then(user => {
-    if (user === null) {
-      res.json({userid: 'error'});
-    } else {
-      bcrypt.compare(req.body.password, user.password).then(response => {
-        if (response) {
-          res.json({userid: user._id})
-        } else {
-          res.json({userid: 'error'});
-        }
-      });
-    }
-  });
+  try{
+    console.log('login user -> ', req.body);
+    User.findOne({email: req.body.email})
+    .then(user => {
+      console.log('found user => ', user);
+      if (!user) {
+        res.json({userid: 'error'});
+      } else {
+        bcrypt.compare(req.body.password, user.password).then(response => {
+          if (response) {
+            console.log('response => ', response, user.id);
+            res.json({userid: user.id})
+          } else {
+            res.json({userid: 'error'});
+          }
+        });
+      }
+    });
+  }catch(err) {
+    res.status(404),json(err);
+  }
 })
 
 router.post('/registration', async (req,res) => {
