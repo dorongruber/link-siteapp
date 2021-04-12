@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path= require('path');
 const cors = require('cors');
-
+require('dotenv').config()
 
 const userRouter = require('./back/routers/users');
 const siteRouter = require('./back/routers/sites');
 mongoose.connect(
   process.env.BD_CONNECTION,
-   { useNewUrlParser: true , useUnifiedTopology: true ,  useFindAndModify: false , returnOriginal: false})
+   { useNewUrlParser: true , useUnifiedTopology: true ,  useFindAndModify: false})
   .then(() => {
     console.log('connected to database');
   })

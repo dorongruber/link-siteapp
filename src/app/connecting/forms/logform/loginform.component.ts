@@ -43,7 +43,8 @@ export class LogformComponent {
           verticalPosition: 'top',
         });
       } else {
-        this.router.navigate(['../mainpage', {id: res.userid}]);
+        console.log('asdlasuudiuhsdoiusabdo');
+        this.router.navigate(['/mainpage', {id: res.userid}]);
       }
 
 
